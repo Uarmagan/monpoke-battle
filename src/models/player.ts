@@ -7,7 +7,7 @@ export class Player implements IPlayer {
   turn: boolean;
 
   create(monpoke: IMonpoke, teamName: string) {
-    return 'team and monpoke created';
+    return `name: ${teamName} and ${monpoke.name} created`;
   }
 
   iChooseYou(monpokeName) {
