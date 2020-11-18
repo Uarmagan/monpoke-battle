@@ -1,4 +1,4 @@
-import { IAttack } from '../interfaces/attack';
+import { IAttackService } from '../interfaces/attackService';
 import { IMonpoke } from '../interfaces/monpoke';
 import { Monpoke } from '../models/monpoke';
 import { AttackService } from './attackService';
@@ -6,12 +6,12 @@ import { AttackService } from './attackService';
 describe('attack', () => {
   let attacker: IMonpoke;
   let defender: IMonpoke;
-  let attack: IAttack;
+  let attack: IAttackService;
 
   beforeEach(() => {
     attack = new AttackService();
     attacker = new Monpoke('pikachu', 10, 5);
-    defender = new Monpoke('Charmder', 10, 3);
+    defender = new Monpoke('Charmander', 10, 3);
   });
 
   test('Be initalized', () => {

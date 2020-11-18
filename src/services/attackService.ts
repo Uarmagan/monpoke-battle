@@ -1,9 +1,9 @@
-import { IAttack } from '../interfaces/attack';
+import { IAttackService } from '../interfaces/attackService';
 import { IMonpoke } from '../interfaces/monpoke';
 
-export class AttackService implements IAttack {
+export class AttackService implements IAttackService {
   monpokeAttack(attacker: IMonpoke, defender: IMonpoke): string {
     defender.takeDamage(attacker.attack());
-    return 'got attacked';
+    return `${attacker.name} attacked ${defender.name} for ${attacker.attackPower} damage`;
   }
 }
