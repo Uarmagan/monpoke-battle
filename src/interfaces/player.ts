@@ -1,6 +1,6 @@
 import { IMonpoke } from '../interfaces/monpoke';
 export interface IPlayer {
-  monpoke: IMonpoke[];
+  monpokeGroup: IMonpoke[];
   chosenMonpoke: IMonpoke;
   teamName: string;
   turn: boolean;
