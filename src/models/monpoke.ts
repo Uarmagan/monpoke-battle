@@ -1,6 +1,6 @@
 import { IMonpoke } from '../interfaces/monpoke';
 export class Monpoke implements IMonpoke {
-  constructor(monpokeName, hitpoints, attackPower) {
+  constructor(monpokeName: string, hitpoints: number, attackPower: number) {
     this.name = monpokeName;
     this.hitpoints = hitpoints;
     this.attackPower = attackPower;
@@ -10,12 +10,13 @@ export class Monpoke implements IMonpoke {
   hitpoints: number;
   attackPower: number;
 
-  attack(): string {
-    return 'monpoke attacked!';
+  attack(): number {
+    return this.attackPower;
   }
 
-  takeDamage(attackHitPoints): string {
-    this.hitpoints -= attackHitPoints;
+  takeDamage(damage: number): string {
+    this.hitpoints -= damage;
+
     return `${this.name} got hit!`;
   }
 }
