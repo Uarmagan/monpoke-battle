@@ -11,7 +11,7 @@ export class Player implements IPlayer {
     return `name: ${teamName} and ${monpoke.name} created`;
   }
 
-  iChooseYou(monpokeName): string {
+  iChooseYou(monpokeName: string): string {
     this.chosenMonpoke = this.monpokeGroup.find(
       (monpoke) => monpoke.name === monpokeName,
     );
