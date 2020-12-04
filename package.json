@@ -25,7 +25,8 @@
     "clean": "rimraf coverage build tmp",
     "build": "npm run clean && tsc -p tsconfig.release.json",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:watch": "jest --coverage --watch"
   },
   "author": "Ugur Armagan",
   "license": "Apache-2.0",

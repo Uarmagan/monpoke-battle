@@ -15,14 +15,15 @@ describe('player', () => {
   });
 
   test('Create a team with a monpoke', () => {
-    newPlayer.create(new Monpoke('Pikachu', 2, 10), 'TeamTest');
+    newPlayer.create('TeamTest', 'Raichu', 4, 1);
     expect(newPlayer.monpokeGroup[0]).toBeInstanceOf(Monpoke);
+    expect(newPlayer.teamName).toBe('TeamTest');
   });
 
   test('choose a monpoke', () => {
-    newPlayer.create(new Monpoke('Pikachu', 2, 10), 'TeamTest');
-    newPlayer.iChooseYou('Pikachu');
+    newPlayer.create('TeamTest', 'Raichu', 4, 1);
+    newPlayer.iChooseYou('Raichu');
     expect(newPlayer.chosenMonpoke).toBeInstanceOf(Monpoke);
-    expect(newPlayer.chosenMonpoke.name).toBe('Pikachu');
+    expect(newPlayer.chosenMonpoke.name).toBe('Raichu');
   });
 });

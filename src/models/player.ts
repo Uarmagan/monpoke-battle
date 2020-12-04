@@ -1,18 +1,24 @@
 import { exit } from 'process';
 import { IMonpoke } from '../interfaces/monpoke';
 import { IPlayer } from '../interfaces/player';
+import { Monpoke } from './monpoke';
 export class Player implements IPlayer {
   monpokeGroup: IMonpoke[] = [];
   chosenMonpoke: IMonpoke;
   teamName: string;
   turn: boolean;
 
-  create(monpoke: IMonpoke, teamName: string): string {
+  create(
+    teamName: string,
+    monpokeName: string,
+    hp: number,
+    ap: number,
+  ): string {
     if (!this.teamName) {
       this.teamName = teamName;
     }
-    this.monpokeGroup.push(monpoke);
-    return `${monpoke.name} has been assigned to team ${teamName}`;
+    this.monpokeGroup.push(new Monpoke(monpokeName, hp, ap));
+    return `${monpokeName} has been assigned to team ${teamName}`;
   }
 
   iChooseYou(monpokeName: string): string {
