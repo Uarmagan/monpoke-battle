@@ -10,7 +10,7 @@ export class Monpoke implements IMonpoke {
   hitpoints: number;
   attackPower: number;
 
-  attack(): number {
+  getAttackDamage(): number {
     return this.attackPower;
   }
 

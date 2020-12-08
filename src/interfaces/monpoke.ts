@@ -3,6 +3,6 @@ export interface IMonpoke {
   attackPower: number;
   name: string;
 
-  attack(): number;
+  getAttackDamage(): number;
   takeDamage(damage): string;
 }
