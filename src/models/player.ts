@@ -8,25 +8,17 @@ export class Player implements IPlayer {
   teamName: string;
   turn: boolean;
 
-  create(
-    teamName: string,
-    monpokeName: string,
-    hp: number,
-    ap: number,
-  ): string {
+  create(teamName: string, monpokeName: string, hp: number, ap: number): void {
     if (!this.teamName) {
       this.teamName = teamName;
     }
     this.monpokeGroup.push(new Monpoke(monpokeName, hp, ap));
-    return `${monpokeName} has been assigned to team ${teamName}`;
   }
 
-  iChooseYou(monpokeName: string): string {
+  iChooseYou(monpokeName: string): void {
     this.chosenMonpoke = this.monpokeGroup.find(
       (monpoke) => monpoke.name === monpokeName,
     );
     if (this.chosenMonpoke === undefined) exit(1);
-
-    return `${this.chosenMonpoke}`;
   }
 }

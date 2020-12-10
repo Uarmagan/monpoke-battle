@@ -5,6 +5,6 @@ export interface IPlayer {
   teamName: string;
   turn: boolean;
 
-  create(teamName: string, monpokeName: string, hp: number, ap: number): string;
-  iChooseYou(monpokeName: string): string;
+  create(teamName: string, monpokeName: string, hp: number, ap: number): void;
+  iChooseYou(monpokeName: string): void;
 }
